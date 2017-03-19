@@ -21,7 +21,7 @@ kuku.show('My snackbar text', {autohide:true, time:3});
 *text* - is the text displayed in the snackbar (it can be also HTML). If yu don't provide it kukuSnackBar will use the latest used text or it's default text.
 *options* - tell how the snackbar should behave after showing. Options look like these:
 ```
-{
+options:{
 autohide:true,//Should the SnackBar hide automatically? (Default: false)
 time:2,//The time (in seconds) after which the snackbar will be hided automatically (autohide have to be set to true. Default: 2)
 button:'Dismiss',//The text displayed in the snackbar button (Default: Dismiss)
@@ -42,6 +42,7 @@ kuku.hide();
 * info - used for informing the user about something
 * warning - used to display warnings
 * danger - used to display something important, like critical error
+
 You can change the style of the snackbar by calling *changeStyle(style)*. Remember to call *changeStyle(style)* before calling *show([text], [options])*!
 ```javascript
 kuku.changeStyle('warning');
