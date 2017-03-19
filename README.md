@@ -4,7 +4,7 @@ is a lightweight easily customizable and responsive SnackBar made in JavaScript 
 
 ### [DEMO AVAIBLE HERE](https://danieo74.github.io/kukuSnackBar/demo)
 ## How to use?
-First you have to include the kukuSnackBar code and create to your website:
+First you have to include the kukuSnackBar code to your website:
 ```html
 <script src="kukusnackbar.js"></script>
 ```
