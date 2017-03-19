@@ -34,7 +34,7 @@ To hide the snackbar simply call *hide()*
 kuku.hide();
 ```
 
-##Styles
+## Styles
 
 **kukuSnackBar** has some default styles defined for different types of alerts.
 * primary - used for anything
@@ -64,7 +64,7 @@ styleName:{
 ```
 You needn't to pass all of the properties. If you don't pass any of these **kukuSnackBar** will automatically inherit the missing property from it's default style.
 
-##Transform
+## Transform
 
 **kukuSnackBar** can be transformed with the *move(x, y)* and *resize(w, h)* functions.
 ```javascript
