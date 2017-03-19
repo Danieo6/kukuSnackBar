@@ -2,7 +2,7 @@
 is a lightweight easily customizable and responsive SnackBar made in JavaScript with some help of HTML and CSS.
 **kukuSnackBar** provides you a simple system for customizing and controlling your SnackBar (more below).
 
-### [DEMO AVAIBLE HERE](https://www.google.com)
+### [DEMO AVAIBLE HERE](https://danieo74.github.io/kukuSnackBar/demo)
 ## How to use?
 First you have to include the kukuSnackBar code and create to your website:
 ```html
