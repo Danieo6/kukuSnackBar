@@ -2,6 +2,7 @@ function kukuSnackbar(defaultStyle)
 {
     'use strict';
 
+    //SnackBar styles
     var style = {
         default: {
             background: '#212121',
@@ -38,12 +39,15 @@ function kukuSnackbar(defaultStyle)
         },
     };
 
+    //SnackBar animations
     var animation = "@keyframes snackbar-anim-default{ from{ bottom: -10%; opacity: 0; } to{ bottom: 0; opacity: 1; } } @keyframes snackbar-anim-back-default{ from{ bottom: 0; } to{ bottom: -10%; } } .snackbar-anim{ animation-name: snackbar-anim-animname; animation-duration: animduration; animation-direction: normal; animation-fill-mode: forwards;} .snackbar-anim-back{ animation-name: snackbar-anim-back-animname; animation-duration: animduration; animation-direction: normal; animation-fill-mode: forwards;}";
 
+    //Main SnackBar variables
     var snackbar;
     var snackbarText = 'Hello, I\'m a SnackBar! You can change this text by providing me the text i should display.';
     var snackbarStyle = style['default'];;
 
+    //Initialize SnackBar (called automatically)
     function Init()
     {   
         if(is(defaultStyle))
@@ -77,18 +81,21 @@ function kukuSnackbar(defaultStyle)
         });
     }
 
+    //Move the SnackBar
     function Move(x, y)
     {
         snackbar.style.left = x;
         snackbar.style.bottom = y;
     }
 
+    //Resize the SnackBar
     function Resize(w, h)
     {
         snackbar.style.width = w;
         snackbar.style.height = h;
     }
 
+    //Refresh the SnackBar
     function RefreshAnim()
     {
         animation = animation.replace(/animname/g, snackbarStyle.animation.name);
@@ -110,6 +117,7 @@ function kukuSnackbar(defaultStyle)
 
     }
 
+    //Function tha allow changing the SnackBar style
     function ChangeStyle(style)
     {
         if(is(style.background))
@@ -135,6 +143,7 @@ function kukuSnackbar(defaultStyle)
         snackbar.style.fontFamily = snackbarStyle.font;
     }
 
+    //Internal use function
     function is(variable)
     {
         if(typeof variable === 'undefined' )
@@ -143,6 +152,7 @@ function kukuSnackbar(defaultStyle)
             return true;
     }
 
+    //Functions that are public
     var callable = {
         show: function(text='', o)
         {
