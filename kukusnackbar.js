@@ -1,3 +1,12 @@
+/*
+##############################################
+#
+#
+#
+#
+#
+##############################################
+*/
 function kukuSnackbar(defaultStyle)
 {
     'use strict';
@@ -154,7 +163,7 @@ function kukuSnackbar(defaultStyle)
 
     //Functions that are public
     var callable = {
-        show: function(text='', o)
+        show: function(text, o)
         {
             var button;
 
@@ -165,7 +174,7 @@ function kukuSnackbar(defaultStyle)
                 click: function(){callable.hide();},
             };
 
-            if(text != '')
+            if(is(text))
                 snackbarText = text;
 
             if(is(o))
@@ -212,12 +221,6 @@ function kukuSnackbar(defaultStyle)
 
         addStyle: function(name, s)
         {
-            if(!is(name) || !is(s))
-            {
-                console.log('SnackBar: Style can\'t be added!');
-                return;
-            }
-
             if(!is(s.background))
                 s.background = style['default'].background;
 
@@ -239,7 +242,7 @@ function kukuSnackbar(defaultStyle)
             style[name] = s;
         },
 
-        addAnimation: function(css){animation += css;}
+        addAnimation: function(css){animation += css; RefreshAnim();}
     }
 
     Init();
