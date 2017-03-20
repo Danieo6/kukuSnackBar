@@ -56,16 +56,16 @@ function kukuSnackbar(defaultStyle)
 
     //Initialize SnackBar (called automatically)
     function Init()
-    {   
+    {
+        //Create the SnackBar element
+        snackbar = document.createElement('div');
+        snackbar.id = 'snackbar';
+
         if(is(defaultStyle))
         {
             //Load default style
             ChangeStyle(defaultStyle);
         }
-
-        //Create the SnackBar element
-        snackbar = document.createElement('div');
-        snackbar.id = 'snackbar';
 
         //Position and resize the SnackBar rect
         snackbar.style.position = 'fixed';
