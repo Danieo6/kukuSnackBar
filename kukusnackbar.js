@@ -5,6 +5,13 @@ Version: 01.00.00
 License: Apache 2.0
 Github: https://github.com/Danieo74/kukuSnackBar
 */
+/*
+Project: kukuSnackBar
+Author: Daniel 'Danieo' Budziński
+Version: 01.00.00
+License: Apache 2.0
+Github: https://github.com/Danieo74/kukuSnackBar
+*/
 function kukuSnackbar(defaultStyle)
 {
     'use strict';
@@ -70,7 +77,7 @@ function kukuSnackbar(defaultStyle)
         //Position and resize the SnackBar rect
         snackbar.style.position = 'fixed';
         Resize('100%', '10%');
-        Move(0, 0);
+        Move(0, '-'+snackbar.style.height);
         RefreshAnim();
 
         //Style it
