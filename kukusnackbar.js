@@ -70,7 +70,7 @@ function kukuSnackbar(defaultStyle)
         //Position and resize the SnackBar rect
         snackbar.style.position = 'fixed';
         Resize('100%', '10%');
-        Move(0, 0);
+        Move(0, '-'+snackbar.style.height);
         RefreshAnim();
 
         //Style it
@@ -193,8 +193,6 @@ function kukuSnackbar(defaultStyle)
                 
                 if(is(o.click))
                     options.click = o.click;
-
-                console.log(options);
             }
             
             button = '<a id="snackbar-button" style="display: table-cell; vertical-align: middle; width: 10%; text-align: right; text-decoration: none; color: '+snackbarStyle.buttonColor+'; padding-right: '+snackbarStyle.verticalPadding+'; font-weight: bold;" href="#">'+options.button+'</a>';            
@@ -206,9 +204,15 @@ function kukuSnackbar(defaultStyle)
         },
 
         hide: function()
-        {
-            snackbar.classList.remove('snackbar-anim');
-            snackbar.className = 'snackbar-anim-back';
+        {   
+            if(snackbar.getBoundingClientRect().bottom <= window.innerHeight)
+            {
+                if(snackbar.getBoundingClientRect().left >= 0)
+                {
+                snackbar.classList.remove('snackbar-anim');
+                snackbar.className = 'snackbar-anim-back';
+                }
+            }
         },
 
         move: function(x, y){ Move(x, y); },
