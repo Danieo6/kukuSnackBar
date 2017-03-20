@@ -5,13 +5,6 @@ Version: 01.00.00
 License: Apache 2.0
 Github: https://github.com/Danieo74/kukuSnackBar
 */
-/*
-Project: kukuSnackBar
-Author: Daniel 'Danieo' Budziński
-Version: 01.00.00
-License: Apache 2.0
-Github: https://github.com/Danieo74/kukuSnackBar
-*/
 function kukuSnackbar(defaultStyle)
 {
     'use strict';
