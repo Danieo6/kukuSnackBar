@@ -159,10 +159,19 @@ function kukuSnackbar(defaultStyle)
             return true;
     }
 
+    function shown()
+    {
+        if(parseFloat(snackbar.getBoundingClientRect().bottom) <= window.innerHeight)
+            if(parseFloat(snackbar.getBoundingClientRect().left) >= 0)
+                return true;
+        return false;
+    }
+
     //Functions that are public
     var callable = {
         show: function(text, o)
         {
+            if(shown()) return;
             var button;
 
             var options = {
@@ -205,21 +214,16 @@ function kukuSnackbar(defaultStyle)
 
         hide: function()
         {   
-            if(snackbar.getBoundingClientRect().bottom <= window.innerHeight)
-            {
-                if(snackbar.getBoundingClientRect().left >= 0)
-                {
-                snackbar.classList.remove('snackbar-anim');
-                snackbar.className = 'snackbar-anim-back';
-                }
-            }
+            if(!shown()) return;
+            snackbar.classList.remove('snackbar-anim');
+            snackbar.className = 'snackbar-anim-back';
         },
 
         move: function(x, y){ Move(x, y); },
 
         resize: function(w, h){ Resize(w, h); },
 
-        changeStyle: function(name){ ChangeStyle(style[name]);},
+        changeStyle: function(name){ if(shown()) return; ChangeStyle(style[name]);},
 
         addStyle: function(name, s)
         {
